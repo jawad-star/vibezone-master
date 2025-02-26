@@ -7,6 +7,7 @@ import Image from "next/image";
 import Menu from "./Menu";
 import { useEffect, useState } from "react";
 import Loader from "@components/Loader";
+import Link from "@node_modules/next/link";
 
 const LeftSideBar = () => {
   const { user, isLoaded } = useUser();

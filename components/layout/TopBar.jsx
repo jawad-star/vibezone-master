@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Add, Logout, Person, Search } from "@mui/icons-material";
+import { Add, Person, Search } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
-import { SignOutButton, SignedIn, UserButton, useUser } from "@clerk/nextjs";
+import {  UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import Image from "next/image";
 import { dark } from "@clerk/themes";
-import Loader from "@components/Loader";
 
 const TopBar = () => {
   const { user, isLoaded } = useUser();
@@ -32,9 +31,7 @@ const TopBar = () => {
   const router = useRouter();
   const [search, setSearch] = useState("");
 
-  return !isLoaded || loading ? (
-    <Loader />
-  ) : (
+  return (
     <div className="flex justify-between items-center mt-6">
       <div className="relative">
         <input
